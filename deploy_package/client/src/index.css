@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 220 30% 10%;
+  --muted: 220 20% 95%;
+  --muted-foreground: 220 20% 45%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 30% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 220 30% 10%;
+  --border: 220 20% 90%;
+  --input: 220 20% 90%;
+  --primary: 210 50% 25%;
+  --primary-foreground: 40 30% 90%;
+  --secondary: 210 40% 30%;
+  --secondary-foreground: 40 30% 90%;
+  --accent: 41 65% 45%;
+  --accent-foreground: 220 35% 15%;
+  --destructive: 0 85% 45%;
+  --destructive-foreground: 40 30% 90%;
+  --ring: 210 50% 25%;
+  --radius: 0.25rem;
+  --chart-1: 210 50% 25%;
+  --chart-2: 210 40% 30%;
+  --chart-3: 41 65% 45%;
+  --chart-4: 329 70% 35%;
+  --chart-5: 210 50% 25%;
+  --sidebar-background: 210 50% 20%;
+  --sidebar-foreground: 40 30% 90%;
+  --sidebar-primary: 210 50% 25%;
+  --sidebar-primary-foreground: 40 30% 90%;
+  --sidebar-accent: 41 65% 45%;
+  --sidebar-accent-foreground: 40 30% 90%;
+  --sidebar-border: 210 35% 25%;
+  --sidebar-ring: 220 20% 85%;
+}
+
+.dark {
+  --background: 225 30% 8%;
+  --foreground: 0 0% 98%;
+  --muted: 225 25% 15%;
+  --muted-foreground: 220 15% 75%;
+  --popover: 225 30% 8%;
+  --popover-foreground: 0 0% 98%;
+  --card: 225 30% 10%;
+  --card-foreground: 0 0% 98%;
+  --border: 225 25% 15%;
+  --input: 225 25% 15%;
+  --primary: 225 75% 30%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 220 35% 20%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 41 70% 50%;
+  --accent-foreground: 225 30% 10%;
+  --destructive: 0 70% 35%;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 225 75% 30%;
+  --radius: 0.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased bg-gray-50 text-gray-800;
+    font-family: 'Avenir', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    font-family: 'Avenir', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+    letter-spacing: -0.01em;
+  }
+
+  h2 {
+    @apply text-3xl;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+  
+  .nav-link {
+    font-family: 'Avenir', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: 0.05em;
+  }
+}
+
+.bg-gradient-primary {
+  @apply bg-gradient-to-r from-blue-950 to-blue-900;
+}
+
+.bg-gradient-banking {
+  @apply bg-gradient-to-b from-[#113457] via-[#1a4878] to-[#113457];
+}
+
+.bg-gradient-gold {
+  @apply bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#b8860b];
+}
+
+.text-gradient-gold {
+  @apply bg-gradient-to-r from-[#b8860b] to-[#d4af37] bg-clip-text text-transparent;
+}
+
+.border-gold {
+  @apply border-[#b8860b];
+}
+
+.text-gold {
+  @apply text-[#d4af37];
+}
+
+.bg-dark-blue {
+  @apply bg-[#113457];
+}
+
+.text-dark-blue {
+  @apply text-[#113457];
+}
+
+/* Classic banking patterns and decorative elements */
+.banking-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a88839' fill-opacity='0.09'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.banking-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #a88839 50%, transparent);
+}
+
+.column-classic {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.column-classic::before, .column-classic::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 20px;
+  width: 20px;
+  background: #a88839;
+  border-radius: 2px;
+}
+
+.column-classic::before {
+  left: 0;
+}
+
+.column-classic::after {
+  right: 0;
+}
+
+.animate-progress {
+  animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
